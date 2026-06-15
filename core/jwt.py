@@ -6,6 +6,6 @@ def jwt_payload(user, context=None):
     return {
         "email": user.email,
         "role": user.role,
-        "exp": now + jwt_settings.JWT_EXPIRATION_DELTA,
+        "exp": (now + jwt_settings.JWT_EXPIRATION_DELTA).timestamp(),
         "origIat": now.timestamp(),
     }

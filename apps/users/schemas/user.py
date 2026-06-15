@@ -14,6 +14,12 @@ class UserType(DjangoObjectType):
         model = User
         fields = ("id", "username", "email", "role")
 
+    role = graphene.String()
+    def resolve_role(self, info):
+        return self.role
+
+
+
 class Query(graphene.ObjectType):
     me = graphene.Field(UserType)
     artist_users = graphene.List(UserType)  
@@ -48,6 +54,7 @@ class RegisterUser(graphene.Mutation):
             username=email,
             email=email,
             password=password,
+            role=RoleChoices.ARTIST,
         )
         return RegisterUser(user=user, message="User registered successfully!")
 
@@ -87,9 +94,6 @@ class CreateUser(graphene.Mutation):
 class Mutation(graphene.ObjectType):
     register_user = RegisterUser.Field()
     create_user = CreateUser.Field()
-    token_auth = graphql_jwt.ObtainJSONWebToken.Field()
-    verify_token = graphql_jwt.Verify.Field()
-    refresh_token = graphql_jwt.Refresh.Field()
-
+    
 
 user_schema = graphene.Schema(query=Query, mutation=Mutation)

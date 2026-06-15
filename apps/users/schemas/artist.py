@@ -140,7 +140,7 @@ class UpdateArtist(graphene.Mutation):
             raise Exception("Artist not found")
         _apply_artist_fields(artist, input)
 
-        # ✅ optionally update linked user
+        
         if input.user_id:
             from apps.users.models.user import User
             try:

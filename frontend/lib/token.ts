@@ -14,6 +14,7 @@ export const tokenService = {
     if (typeof window === "undefined") return null;
     return localStorage.getItem(ACCESS_TOKEN);
   },
+
   getRole: (): string | null => {
     if (typeof window === "undefined") return null;
     const token = localStorage.getItem(ACCESS_TOKEN);
@@ -36,6 +37,7 @@ export const tokenService = {
       document.cookie = `access_token=${token}; path=/`;
     }
   },
+
   clearToken: () => {
     localStorage.removeItem(ACCESS_TOKEN);
     document.cookie = "access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";

@@ -130,6 +130,7 @@ GRAPHENE = {
     'MIDDLEWARE': [
         'graphql_jwt.middleware.JSONWebTokenMiddleware',
     ],
+    "ENCODER": "django.core.serializers.json.DjangoJSONEncoder",
 }
 
 GRAPHQL_JWT = {
