@@ -1,4 +1,4 @@
-````md
+
 # AMS QA Documentation
 
 ## 1. Application Overview
