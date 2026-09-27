@@ -99,7 +99,7 @@ An Artist cannot:
 * Create privileged users.
 
 The application also provides general Artist and Music queries to authenticated users. Whether Artists should be allowed to access all Artist or Music records is a business rule that should be verified during QA testing.
-```md
+
 ## 2.4 Role-Permission Matrix
 
 The following matrix summarizes the permissions available to each user role.
@@ -134,7 +134,7 @@ The following matrix summarizes the permissions available to each user role.
 - Artist Managers can create only Artist users.
 - Artists cannot perform management operations on Artist profiles or Music records.
 - The general Artist and Music queries currently allow authenticated users to access them. QA testing must verify whether Artists should see all records or only their own records.
-```
+
 
 
 ## 3. Application Features
