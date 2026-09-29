@@ -360,3 +360,65 @@ mutation {
 ## Gender Choices
 
 `m` (Male), `f` (Female), `o` (Other)
+## QA & Testing
+
+This project includes a structured QA process covering functional testing, authentication, authorization, input validation, negative testing, defect reporting, and regression planning.
+
+### QA Coverage
+
+* Functional testing
+* GraphQL/API testing
+* Authentication testing
+* Role-based authorization testing
+* Object-level access control testing
+* Input validation
+* Negative testing
+* Boundary-value testing
+* Test case design
+* Defect reporting
+* Regression testing
+
+### QA Documentation
+
+Detailed QA documentation is available in the [`qa/`](./qa/) directory.
+
+```text
+qa/
+├── test-plan/
+│   └── test-plan.md
+├── test-cases/
+│   ├── authentication.md
+│   ├── artist-management.md
+│   ├── user-management.md
+│   ├── music-management.md
+│   └── authorization.md
+├── test-data/
+│   └── test-data.md
+├── test-execution/
+│   └── test-execution-report.md
+├── defect-summary/
+│   └── defect-summary.md
+├── bug-reports/
+│   ├── README.md
+│   └── BUG-001 to BUG-012
+├── qa-workflow.md
+├── README.md
+└── final-report.md
+```
+
+### Key QA Findings
+
+The assessment identified authorization and validation concerns, including:
+
+* Insufficient access restrictions for some Artist records
+* Potential cross-artist Music access
+* Missing object-level authorization checks
+* Input validation gaps
+* Potential Artist/User relationship integrity issues
+* Password and email validation requiring additional verification
+
+### QA Note
+
+The current QA execution report is based on **source-code analysis and simulated execution**. It does not claim that every test case was manually executed against a live environment.
+
+No fabricated runtime evidence or screenshots are included.
